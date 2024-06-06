@@ -45,7 +45,10 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(len(train_generator.class_indices), activation='softmax')
 ])
 
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)
+
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
 
 model.fit(
     train_generator,
